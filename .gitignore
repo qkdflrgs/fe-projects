@@ -17,3 +17,6 @@
 # build
 **/dist/*
 dist
+
+# nx
+.nx
