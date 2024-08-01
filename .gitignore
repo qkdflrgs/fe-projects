@@ -20,3 +20,4 @@ dist
 
 # nx
 .nx
+*storybook.log
