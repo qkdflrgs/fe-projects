@@ -31,6 +31,5 @@ export const Text = {
     children: "Hello World",
     fontSize: "xl",
     color: "gray",
-    background: "blue",
   },
 };
