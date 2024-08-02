@@ -1,12 +1,13 @@
 import * as React from "react";
-import { BoxProps } from "./types";
+import { TextProps } from "./types";
+import { vars } from "@litae/themes";
 import { clsx } from "clsx";
 import { StyleSprinkles } from "../core/style.css";
 import { extractSprinkleProps } from "../utils/properties";
-import { vars } from "@litae/themes";
+import { textStyle } from "./style.css";
 
-const Box = (props: BoxProps, ref: React.Ref<HTMLElement>) => {
-  const { as = "div", color, background, children } = props;
+const Text = (props: TextProps, ref: React.Ref<HTMLElement>) => {
+  const { as = "p", color = "gray", background, children, fontSize } = props;
 
   return React.createElement(
     as,
@@ -22,6 +23,7 @@ const Box = (props: BoxProps, ref: React.Ref<HTMLElement>) => {
         StyleSprinkles(
           extractSprinkleProps(props, Array.from(StyleSprinkles.properties)),
         ),
+        textStyle({ fontSize }),
         props.className,
       ]),
     },
@@ -29,6 +31,6 @@ const Box = (props: BoxProps, ref: React.Ref<HTMLElement>) => {
   );
 };
 
-const _Box = React.forwardRef(Box);
+const _Text = React.forwardRef(Text);
 
-export { _Box as Box };
+export { _Text as Text };
