@@ -30,4 +30,5 @@ const Box = (props: BoxProps, ref: React.Ref<HTMLElement>) => {
 };
 
 const _Box = React.forwardRef(Box);
+
 export { _Box as Box };

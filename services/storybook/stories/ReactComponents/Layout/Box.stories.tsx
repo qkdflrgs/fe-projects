@@ -10,7 +10,7 @@ export default {
   tags: ["autodocs"],
 };
 
-export const BoxStory = {
+export const Box = {
   args: {
     as: "button",
     padding: "5",
