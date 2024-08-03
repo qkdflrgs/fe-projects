@@ -15,8 +15,8 @@ const Text = (props: TextProps, ref: React.Ref<HTMLElement>) => {
       ...props,
       ref,
       style: {
-        color: vars.colors.$scale?.[color]?.[700] ?? color,
-        backgroundColor: vars.colors.$scale?.[background]?.[100] ?? background,
+        color: color && vars.colors.$scale?.[color]?.[700],
+        backgroundColor: background && vars.colors.$scale?.[background]?.[100],
         ...props.style,
       },
       className: clsx([
