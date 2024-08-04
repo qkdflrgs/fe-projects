@@ -42,8 +42,8 @@ const Grid = (props: GridProps, ref: React.Ref<HTMLElement>) => {
         gridTemplateAreas: templateAreas,
         gridColumn: column,
         gridRow: row,
-        color: vars.colors.$scale?.[color]?.[700] ?? color,
-        backgroundColor: vars.colors.$scale?.[background]?.[100] ?? background,
+        color: color && vars.colors.$scale?.[color]?.[700],
+        backgroundColor: background && vars.colors.$scale?.[background]?.[100],
         ...props.style,
       },
       className: clsx([
