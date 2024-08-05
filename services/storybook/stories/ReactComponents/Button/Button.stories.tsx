@@ -1,7 +1,7 @@
 import "@litae/react-components-button/style.css";
 import { vars } from "@litae/themes";
 import { Button as _Button } from "@litae/react-components-button";
-import { useButton } from "@litae/react-hooks-button";
+import { useButton, useToggleButton } from "@litae/react-hooks-button";
 import { Text } from "@litae/react-components-layout";
 import React from "react";
 
@@ -61,6 +61,27 @@ export const TextButton = {
       >
         텍스트 버튼입니다.
       </Text>
+    );
+  },
+};
+
+export const ToggleButton = {
+  render: () => {
+    const { buttonProps, isSelected } = useToggleButton(
+      {
+        elementType: "button",
+      },
+      false,
+    );
+
+    return (
+      <_Button
+        {...buttonProps}
+        variant={isSelected ? "solid" : "outline"}
+        color="green"
+      >
+        {isSelected ? "😀" : "🥲"}
+      </_Button>
     );
   },
 };

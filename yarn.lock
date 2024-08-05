@@ -2009,6 +2009,23 @@ __metadata:
   resolution: "@litae/react-hooks-button@workspace:packages/react/hooks/button"
   dependencies:
     "@litae/esbuild-config": "workspace:^"
+    "@litae/react-hooks-toggle": "workspace:^"
+    "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18.3.0"
+    clsx: "npm:^2.1.1"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    typescript: "npm:^5.5.4"
+  peerDependencies:
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
+"@litae/react-hooks-toggle@workspace:^, @litae/react-hooks-toggle@workspace:packages/react/hooks/toggle":
+  version: 0.0.0-use.local
+  resolution: "@litae/react-hooks-toggle@workspace:packages/react/hooks/toggle"
+  dependencies:
+    "@litae/esbuild-config": "workspace:^"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     clsx: "npm:^2.1.1"
@@ -2028,6 +2045,7 @@ __metadata:
     "@litae/react-components-button": "workspace:^"
     "@litae/react-components-layout": "workspace:^"
     "@litae/react-hooks-button": "workspace:^"
+    "@litae/react-hooks-toggle": "workspace:^"
     "@litae/themes": "workspace:^"
     "@storybook/addon-essentials": "npm:^8.2.7"
     "@storybook/addon-interactions": "npm:^8.2.7"
