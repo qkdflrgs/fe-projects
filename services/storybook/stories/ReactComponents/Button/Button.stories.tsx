@@ -28,6 +28,10 @@ export default {
 export const Button = {
   args: {
     size: "md",
+    variant: "outline",
+    leftIcon: "🙂",
     children: "Button",
+    isLoading: true,
+    isDisabled: false,
   },
 };
