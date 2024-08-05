@@ -37,6 +37,7 @@
     "react": "*"
   },
   "dependencies": {
+    "@litae/react-hooks-button": "workspace:^",
     "clsx": "^2.1.1"
   }
 }
