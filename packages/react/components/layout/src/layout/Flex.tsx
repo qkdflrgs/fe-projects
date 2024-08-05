@@ -1,7 +1,7 @@
 import * as React from "react";
 import { FlexProps } from "./types";
 import { clsx } from "clsx";
-import { StyleSprinkles } from "../core/style.css";
+import { BaseStyle, StyleSprinkles } from "../core/style.css";
 import { extractSprinkleProps } from "../utils/properties";
 import { vars } from "@litae/themes";
 
@@ -41,6 +41,7 @@ const Flex = (props: FlexProps, ref: React.Ref<HTMLElement>) => {
         ...props.style,
       },
       className: clsx([
+        BaseStyle,
         StyleSprinkles(
           extractSprinkleProps(props, Array.from(StyleSprinkles.properties)),
         ),

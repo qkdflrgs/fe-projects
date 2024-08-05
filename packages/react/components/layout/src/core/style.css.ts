@@ -1,5 +1,18 @@
 import { vars } from "@litae/themes";
+import { style } from "@vanilla-extract/css";
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
+
+export const BaseStyle = style({
+  padding: 0,
+  margin: 0,
+
+  // @ts-ignore
+  "&:focus-visible": {
+    outline: "none",
+
+    boxShadow: vars.box.shadows.outline,
+  },
+});
 
 const MarginAndPaddingProperties = defineProperties({
   properties: {
