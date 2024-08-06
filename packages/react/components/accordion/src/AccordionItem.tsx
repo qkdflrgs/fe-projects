@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Children, cloneElement } from "react";
+import { Children, cloneElement, isValidElement } from "react";
 import { AccordionItemProps } from "./types";
 import { clsx } from "clsx";
 import { accordionItemStyle } from "./style.css";
@@ -13,7 +13,7 @@ const AccordionItem = (
   const childrenWithProps = Children.toArray(children);
 
   const accordionItemChildren = childrenWithProps.map((child) => {
-    if (React.isValidElement(child)) {
+    if (isValidElement(child)) {
       return cloneElement(child, { ...child.props, itemName });
     }
 
