@@ -2006,6 +2006,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@litae/react-components-input@workspace:^, @litae/react-components-input@workspace:packages/react/components/input":
+  version: 0.0.0-use.local
+  resolution: "@litae/react-components-input@workspace:packages/react/components/input"
+  dependencies:
+    "@litae/esbuild-config": "workspace:^"
+    "@litae/react-hooks-input": "workspace:^"
+    "@litae/themes": "workspace:^"
+    "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18.3.0"
+    "@vanilla-extract/css": "npm:^1.15.3"
+    "@vanilla-extract/dynamic": "npm:^2.1.1"
+    "@vanilla-extract/esbuild-plugin": "npm:^2.3.8"
+    "@vanilla-extract/recipes": "npm:^0.5.3"
+    "@vanilla-extract/sprinkles": "npm:^1.6.2"
+    clsx: "npm:^2.1.1"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    typescript: "npm:^5.5.4"
+  peerDependencies:
+    "@litae/themes": "workspace:^"
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "@litae/react-components-layout@workspace:^, @litae/react-components-layout@workspace:packages/react/components/layout":
   version: 0.0.0-use.local
   resolution: "@litae/react-components-layout@workspace:packages/react/components/layout"
@@ -2045,6 +2069,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@litae/react-hooks-input@workspace:^, @litae/react-hooks-input@workspace:packages/react/hooks/input":
+  version: 0.0.0-use.local
+  resolution: "@litae/react-hooks-input@workspace:packages/react/hooks/input"
+  dependencies:
+    "@litae/esbuild-config": "workspace:^"
+    "@litae/react-hooks-toggle": "workspace:^"
+    "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18.3.0"
+    clsx: "npm:^2.1.1"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    typescript: "npm:^5.5.4"
+  peerDependencies:
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "@litae/react-hooks-toggle@workspace:^, @litae/react-hooks-toggle@workspace:packages/react/hooks/toggle":
   version: 0.0.0-use.local
   resolution: "@litae/react-hooks-toggle@workspace:packages/react/hooks/toggle"
@@ -2068,6 +2109,7 @@ __metadata:
     "@chromatic-com/storybook": "npm:^1.6.1"
     "@litae/react-components-accordion": "workspace:^"
     "@litae/react-components-button": "workspace:^"
+    "@litae/react-components-input": "workspace:^"
     "@litae/react-components-layout": "workspace:^"
     "@litae/react-hooks-button": "workspace:^"
     "@litae/react-hooks-toggle": "workspace:^"
