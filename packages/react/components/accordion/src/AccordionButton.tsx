@@ -3,6 +3,8 @@ import { AccordionButtonProps } from "./types";
 import { useAccordionContext } from "./AccordionContext";
 import { useButton } from "@litae/react-hooks-button";
 import { clsx } from "clsx";
+import { accordionButtonStyle } from "./style.css";
+import * as React from "react";
 
 const AccordionButton = (
   props: AccordionButtonProps,
@@ -16,22 +18,26 @@ const AccordionButton = (
       setActiveItem(itemName);
       onClick?.(e);
     },
-    [itemName, setActiveItem, onClick],
+    [itemName, setActiveItem],
   );
 
-  const buttonProps = useButton({
+  const { buttonProps } = useButton({
     ...rest,
     onClick: handleClick,
     elementType: "button",
   });
 
   return (
-    <button ref={ref} className={clsx([className])} {...buttonProps}>
+    <button
+      {...buttonProps}
+      ref={ref}
+      className={clsx([accordionButtonStyle, className])}
+    >
       {children}
     </button>
   );
 };
 
-const _AccordionButton = AccordionButton;
+const _AccordionButton = React.forwardRef(AccordionButton);
 
 export { _AccordionButton as AccordionButton };
