@@ -1958,7 +1958,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@litae/react-components-accordion@workspace:packages/react/components/accordion":
+"@litae/react-components-accordion@workspace:^, @litae/react-components-accordion@workspace:packages/react/components/accordion":
   version: 0.0.0-use.local
   resolution: "@litae/react-components-accordion@workspace:packages/react/components/accordion"
   dependencies:
@@ -2066,6 +2066,7 @@ __metadata:
   resolution: "@litae/storybook@workspace:services/storybook"
   dependencies:
     "@chromatic-com/storybook": "npm:^1.6.1"
+    "@litae/react-components-accordion": "workspace:^"
     "@litae/react-components-button": "workspace:^"
     "@litae/react-components-layout": "workspace:^"
     "@litae/react-hooks-button": "workspace:^"
