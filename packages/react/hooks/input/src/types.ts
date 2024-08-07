@@ -16,4 +16,5 @@ export type UseInputResult = {
     "aria-invalid": boolean;
     "aria-required": boolean;
   };
+  valueCount: number;
 };
