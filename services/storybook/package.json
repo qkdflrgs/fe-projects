@@ -5,6 +5,7 @@
     "@chromatic-com/storybook": "^1.6.1",
     "@litae/react-components-accordion": "workspace:^",
     "@litae/react-components-button": "workspace:^",
+    "@litae/react-components-input": "workspace:^",
     "@litae/react-components-layout": "workspace:^",
     "@litae/react-hooks-button": "workspace:^",
     "@litae/react-hooks-toggle": "workspace:^",
