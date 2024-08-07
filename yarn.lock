@@ -2076,6 +2076,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@litae/react-components-toast@workspace:^, @litae/react-components-toast@workspace:packages/react/components/toast":
+  version: 0.0.0-use.local
+  resolution: "@litae/react-components-toast@workspace:packages/react/components/toast"
+  dependencies:
+    "@litae/esbuild-config": "workspace:^"
+    "@litae/themes": "workspace:^"
+    "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18.3.0"
+    "@vanilla-extract/css": "npm:^1.15.3"
+    "@vanilla-extract/dynamic": "npm:^2.1.1"
+    "@vanilla-extract/esbuild-plugin": "npm:^2.3.8"
+    "@vanilla-extract/recipes": "npm:^0.5.3"
+    "@vanilla-extract/sprinkles": "npm:^1.6.2"
+    clsx: "npm:^2.1.1"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    typescript: "npm:^5.5.4"
+  peerDependencies:
+    "@litae/themes": "workspace:^"
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "@litae/react-hooks-button@workspace:^, @litae/react-hooks-button@workspace:packages/react/hooks/button":
   version: 0.0.0-use.local
   resolution: "@litae/react-hooks-button@workspace:packages/react/hooks/button"
@@ -2152,6 +2175,7 @@ __metadata:
     "@litae/react-components-input": "workspace:^"
     "@litae/react-components-layout": "workspace:^"
     "@litae/react-components-select": "workspace:^"
+    "@litae/react-components-toast": "workspace:^"
     "@litae/react-hooks-button": "workspace:^"
     "@litae/react-hooks-toggle": "workspace:^"
     "@litae/themes": "workspace:^"
