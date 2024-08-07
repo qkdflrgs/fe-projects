@@ -8,6 +8,7 @@
     "@litae/react-components-input": "workspace:^",
     "@litae/react-components-layout": "workspace:^",
     "@litae/react-components-select": "workspace:^",
+    "@litae/react-components-toast": "workspace:^",
     "@litae/react-hooks-button": "workspace:^",
     "@litae/react-hooks-toggle": "workspace:^",
     "@litae/themes": "workspace:^",
