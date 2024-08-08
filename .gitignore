@@ -21,3 +21,14 @@ dist
 # nx
 .nx
 *storybook.log
+**/storybook-static/
+
+# next.js
+**/.next/
+**/out/
+
+# production
+**/build
+
+.env
+**/.env
