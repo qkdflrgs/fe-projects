@@ -33,7 +33,7 @@ export const ToastProvider = ({ children }: PropsWithChildren<{}>) => {
     <ToastContext.Provider value={{ toast: handleToast }}>
       {children}
       <ToastContainer>
-        {toastPayload && <Toast message="토스트" />}
+        {toastPayload && <Toast message={toastPayload.message} />}
       </ToastContainer>
     </ToastContext.Provider>
   );

@@ -26,3 +26,14 @@ export const InputGroupStory = {
     </InputGroup>
   ),
 };
+
+export const InputVariantFilledStory = {
+  render: () => <Input variant="filled" placeholder="내용을 입력해주세요" />,
+};
+
+export const InputFocusVisibleState = {
+  render: () => <Input />,
+  parameters: {
+    pseudo: { focusVisible: true },
+  },
+};
