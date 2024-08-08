@@ -39,9 +39,11 @@
     "vitest": "^2.0.5"
   },
   "scripts": {
-    "test": "vitest",
+    "test": "vitest run",
+    "test:watch": "vitest --ui",
     "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
+    "build": "npx chromatic --project-token=chpt_be65f1e009a0758",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=chpt_be65f1e009a0758"
   },
