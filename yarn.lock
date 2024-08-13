@@ -2026,6 +2026,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@litae/page-builder@workspace:services/page-builder"
   dependencies:
+    "@litae/react-components-accordion": "workspace:^"
     "@litae/react-components-layout": "workspace:^"
     "@litae/themes": "workspace:^"
     "@types/node": "npm:^22.2.0"
