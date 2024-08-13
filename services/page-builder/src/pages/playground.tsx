@@ -5,6 +5,7 @@ import { ImageSlice } from "../components/view/slices/Image";
 import { CDN_BASE_URL } from "../constants";
 import { SpacingSlice } from "../components/view/slices/Spacing";
 import { ImageSliderSectionSlice } from "../components/view/slices/ImageSliderSection";
+import { AccordionSlice } from "../components/view/slices/Accordion";
 
 const PlaygroundPage = () => {
   return (
@@ -27,7 +28,6 @@ const PlaygroundPage = () => {
           backgroundColor: "#FFD951",
         }}
       />
-
       {/* 혜택 영역 */}
       <SpacingSlice
         sliceStyle={{
@@ -192,6 +192,51 @@ const PlaygroundPage = () => {
         sliceStyle={{
           backgroundColor: vars.colors.$scale.gray[900],
           height: 32,
+        }}
+      />
+      {/* 주의사항 세션 */}
+      <SpacingSlice
+        sliceStyle={{
+          backgroundColor: vars.colors.$scale.gray[200],
+          height: 120,
+        }}
+      />
+      <TextSlice
+        text="100원딜 이벤트 주의사항"
+        sliceStyle={{
+          backgroundColor: vars.colors.$scale.gray[200],
+          textSize: 24,
+          textWeight: 700,
+        }}
+      />
+      <SpacingSlice
+        sliceStyle={{
+          backgroundColor: vars.colors.$scale.gray[200],
+          height: 16,
+        }}
+      />
+      <AccordionSlice
+        accordionContents={[
+          {
+            key: "1",
+            title: "1. 이벤트 기간",
+            content:
+              "2024년 7월 26일(월) ~ 8월 6일(금) 23:59\n\n※ 이벤트 기간 중 100원딜 강의를 구매하시면 100일간 무제한 수강 가능합니다.",
+          },
+          {
+            key: "2",
+            title: "2. 이벤트 주의사항",
+            content:
+              "- [100원딜] 상품 구매 시 네이버페이 1만원권 상품권(모바일)을 증정해 드립니다.\n- 네이버페이 상품권은 한정 수량으로 소진 시 조기 마감될 수 있습니다.\n- 구매 후 소진으로 인한 미증정 시 별도 안내됩니다.\n- 네이버페이 상품권은 8월 29(화)이후 문자로 발송됩니다.",
+          },
+        ]}
+        openedAccordion={true}
+        sliceStyle={{ backgroundColor: vars.colors.$scale.gray[200] }}
+      />
+      <SpacingSlice
+        sliceStyle={{
+          backgroundColor: vars.colors.$scale.gray[200],
+          height: 120,
         }}
       />
     </MobileFirstLayout>
