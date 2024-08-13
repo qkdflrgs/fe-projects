@@ -1,5 +1,6 @@
 import { Text } from "@litae/react-components-layout";
 import { vars } from "@litae/themes";
+import { useMemo } from "react";
 
 type Props = {
   text: string;
@@ -32,24 +33,32 @@ export const TextSlice = ({ text, highlightTexts = [], sliceStyle }: Props) => {
     highlightTextWeight,
   } = sliceStyle ?? {};
 
-  const regex = new RegExp(`(${highlightTexts.join("|")})`, "gi");
-  const highlightedText = text.split(regex).map((word, index) => {
-    if (highlightTexts.some((query) => new RegExp(query, "i").test(word))) {
-      return (
-        <span
-          key={`${word}-${index}`}
-          style={{
-            color: highlightTextColor,
-            fontWeight: highlightTextWeight ?? textWeight,
-          }}
-        >
-          {word}
-        </span>
-      );
+  const hasHighlightText = highlightTexts.length > 0;
+  const highlightedText = useMemo(() => {
+    if (hasHighlightText) {
+      const regex = new RegExp(`(${highlightTexts.join("|")})`, "gi");
+
+      return text.split(regex).map((word, index) => {
+        if (highlightTexts.some((query) => new RegExp(query, "i").test(word))) {
+          return (
+            <span
+              key={`${word}-${index}`}
+              style={{
+                color: highlightTextColor,
+                fontWeight: highlightTextWeight ?? textWeight,
+              }}
+            >
+              {word}
+            </span>
+          );
+        }
+
+        return word;
+      });
     }
 
-    return word;
-  });
+    return text;
+  }, [text, highlightTexts]);
 
   return (
     <Text
