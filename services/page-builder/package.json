@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@litae/react-components-accordion": "workspace:^",
+    "@litae/react-components-button": "workspace:^",
     "@litae/react-components-layout": "workspace:^",
     "@litae/themes": "workspace:^",
     "next": "14.2.5",
