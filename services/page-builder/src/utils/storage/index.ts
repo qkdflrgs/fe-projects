@@ -8,7 +8,7 @@ const initLocalStorage = (prefix: string): Storage => {
   return {
     get: (key: string) => localStorage.getItem(`${prefix}/${key}`),
     set: (key: string, value: string) =>
-      localStorage.setItem(`${prefix}/ ${key}`, value),
+      localStorage.setItem(`${prefix}/${key}`, value),
     remove: (key: string) => localStorage.removeItem(`${prefix}/${key}`),
   };
 };
