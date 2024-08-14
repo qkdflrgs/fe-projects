@@ -10,6 +10,8 @@ import ShortUniqueId from "short-unique-id";
 import { previewStorage } from "@/src/utils/storage";
 import { useViewSchemaValidation } from "@/src/hooks/useViewSchemaValidation";
 import { useToast } from "@litae/react-components-toast";
+import { DesktopFirstSideNav } from "@/src/components/layout/DesktopFirstLayout/SideNav";
+import { JsonPresetList } from "@/src/components/EditorNewPage/JsonPresetList";
 
 const EditorNewPage = () => {
   const { randomUUID } = new ShortUniqueId({ length: 10 });
@@ -61,7 +63,14 @@ const EditorNewPage = () => {
           배포하기
         </Button>
       </DesktopFirstNav>
-      <DesktopFirstBody>
+      <DesktopFirstBody padding={0}>
+        <DesktopFirstSideNav>
+          <JsonPresetList
+            schema={schema}
+            setSchema={setSchema}
+            validateViewSchema={validateViewSchema}
+          />
+        </DesktopFirstSideNav>
         <JsonEditor
           value={schema}
           onChange={(value) => setSchema(value || "")}
