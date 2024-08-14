@@ -8,23 +8,39 @@ import { ViewSliceSchemaSnippet } from "@/src/utils/jsonEditor/ViewSchemaSnippet
 import { formatObjectToJson } from "@/src/components/Editor";
 import ShortUniqueId from "short-unique-id";
 import { previewStorage } from "@/src/utils/storage";
+import { useViewSchemaValidation } from "@/src/hooks/useViewSchemaValidation";
+import { useToast } from "@litae/react-components-toast";
 
 const EditorNewPage = () => {
   const { randomUUID } = new ShortUniqueId({ length: 10 });
   const viewId = randomUUID();
+  const { toast } = useToast();
 
   const [schema, setSchema] = useState(
     formatObjectToJson(ViewSliceSchemaSnippet.init),
   );
+
+  const { validateViewSchema, handleEditorValidation } =
+    useViewSchemaValidation();
 
   const handleReset = () => {
     setSchema(formatObjectToJson(ViewSliceSchemaSnippet.init));
   };
 
   const handlePreview = () => {
-    previewStorage.set(viewId, schema);
+    validateViewSchema({
+      viewSchema: schema,
+      onSuccess: () => {
+        previewStorage.set(viewId, schema);
 
-    window.open(`/preview/${viewId}`, "_blank");
+        window.open(`/preview/${viewId}`, "_blank");
+      },
+      onError: ({ message }) => {
+        toast({
+          payload: { message },
+        });
+      },
+    });
   };
 
   return (
@@ -49,6 +65,7 @@ const EditorNewPage = () => {
         <JsonEditor
           value={schema}
           onChange={(value) => setSchema(value || "")}
+          onValidate={handleEditorValidation}
         />
       </DesktopFirstBody>
     </DesktopFirstLayout>
