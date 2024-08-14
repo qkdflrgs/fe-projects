@@ -6,29 +6,10 @@ import {
   AccordionButton,
   AccordionPanel,
 } from "@litae/react-components-accordion";
+import { SliceSchemaProps } from "@/src/utils/validation/schema/types";
+import { AccordionSliceSchema } from "@/src/utils/validation/schema/slices";
 
-type AccordionContentItem = {
-  key: string;
-  title: string;
-  content: string;
-};
-
-type Props = {
-  accordionContents: AccordionContentItem[];
-  openedAccordion?: boolean;
-  sliceStyle?: {
-    padding?: keyof typeof vars.box.spacing;
-    paddingX?: keyof typeof vars.box.spacing;
-    paddingY?: keyof typeof vars.box.spacing;
-    backgroundColor?: string;
-    titleTextColor?: string;
-    titleTextSize?: keyof typeof vars.typography.fontSize;
-    titleTextWeight?: keyof typeof vars.typography.fontWeight;
-    contentTextColor?: string;
-    contentTextSize?: keyof typeof vars.typography.fontSize;
-    contentTextWeight?: keyof typeof vars.typography.fontWeight;
-  };
-};
+type Props = SliceSchemaProps<typeof AccordionSliceSchema>;
 
 export const AccordionSlice = ({
   accordionContents,

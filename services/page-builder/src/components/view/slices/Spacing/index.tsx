@@ -1,12 +1,9 @@
+import { SpacingSliceSchema } from "@/src/utils/validation/schema/slices";
+import { SliceSchemaProps } from "@/src/utils/validation/schema/types";
 import { Box } from "@litae/react-components-layout";
 import { vars } from "@litae/themes";
 
-type Props = {
-  sliceStyle?: {
-    height?: number;
-    backgroundColor?: string;
-  };
-};
+type Props = SliceSchemaProps<typeof SpacingSliceSchema>;
 
 export const SpacingSlice = ({ sliceStyle }: Props) => {
   const {
