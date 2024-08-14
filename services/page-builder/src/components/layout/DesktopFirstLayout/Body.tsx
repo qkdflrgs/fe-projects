@@ -1,6 +1,6 @@
-import { Box, BoxProps } from "@litae/react-components-layout";
+import { Flex, FlexProps } from "@litae/react-components-layout";
 
-type Props = BoxProps;
+type Props = FlexProps;
 
 export const DesktopFirstBody = (props: Props) => {
   const { className, padding = 2, children, ...rest } = props;
@@ -11,8 +11,8 @@ export const DesktopFirstBody = (props: Props) => {
   ].join(" ");
 
   return (
-    <Box {...rest} className={currentClassName} padding={padding}>
+    <Flex {...rest} className={currentClassName} padding={padding}>
       {children}
-    </Box>
+    </Flex>
   );
 };
