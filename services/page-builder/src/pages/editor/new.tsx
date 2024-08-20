@@ -54,12 +54,18 @@ const EditorNewPage = () => {
           await putViewDetail({
             viewId,
             data: {
-              value: JSON.stringify(schema),
+              value: schema,
               metadata: {
                 createAt: new Date().toISOString(),
               },
             },
           });
+
+          const objectifiedSchema = JSON.parse(schema);
+          const convertedSlug = objectifiedSchema.slug.splite(" ").join("-");
+          const slug = `${convertedSlug}-${viewId}`;
+
+          window.open(`/preview/${slug}`, "_blank");
         } catch (error) {
           toast({
             payload: {
