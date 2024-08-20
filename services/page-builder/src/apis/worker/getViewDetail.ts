@@ -1,9 +1,10 @@
 import { ViewSchemaProps } from "@/src/utils/validation/schema/types";
 import { WORKER_BASE_PATH, workerInstance } from ".";
+import { ViewMetadata } from "./type";
 
 type ViewDetailResponseData = {
   value: ViewSchemaProps;
-  metadata: Object;
+  metadata: ViewMetadata;
 };
 
 const getViewDetailPath = (viewId: string) => `${WORKER_BASE_PATH}/${viewId}`;
