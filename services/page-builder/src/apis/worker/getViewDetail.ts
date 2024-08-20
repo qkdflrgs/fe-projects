@@ -7,7 +7,8 @@ type ViewDetailResponseData = {
   metadata: ViewMetadata;
 };
 
-const getViewDetailPath = (viewId: string) => `${WORKER_BASE_PATH}/${viewId}`;
+export const getViewDetailPath = (viewId: string) =>
+  `${WORKER_BASE_PATH}/${viewId}`;
 
 type Params = {
   viewId: string;
