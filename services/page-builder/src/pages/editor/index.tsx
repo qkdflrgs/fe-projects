@@ -3,8 +3,16 @@ import { DesktopFirstLayout } from "@/src/components/layout/DesktopFirstLayout";
 import { DesktopFirstBody } from "@/src/components/layout/DesktopFirstLayout/Body";
 import { DesktopFirstNav } from "@/src/components/layout/DesktopFirstLayout/Nav";
 import Link from "next/link";
+import {
+  getViewList,
+  ViewListResponseData,
+} from "@/src/apis/worker/getViewList";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { ViewList } from "@/src/components/EditorPage/ViewList";
 
-const EditorPage = () => {
+const EditorPage = ({
+  keys,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <DesktopFirstLayout>
       <DesktopFirstNav>
@@ -14,9 +22,19 @@ const EditorPage = () => {
           </Button>
         </Link>
       </DesktopFirstNav>
-      <DesktopFirstBody>Editor</DesktopFirstBody>
+      <DesktopFirstBody justify="center" background="gray">
+        <ViewList viewList={keys} />
+      </DesktopFirstBody>
     </DesktopFirstLayout>
   );
 };
 
 export default EditorPage;
+
+export const getServerSideProps: GetServerSideProps<
+  ViewListResponseData
+> = async () => {
+  const response = await getViewList();
+
+  return { props: response };
+};
