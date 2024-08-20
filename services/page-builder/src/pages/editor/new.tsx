@@ -50,20 +50,21 @@ const EditorNewPage = () => {
     validateViewSchema({
       viewSchema: schema,
       onSuccess: async () => {
+        const objectifiedSchema = JSON.parse(schema);
+        const convertedSlug = objectifiedSchema.slug.splite(" ").join("-");
+        const slug = `${convertedSlug}-${viewId}`;
+
         try {
           await putViewDetail({
             viewId,
             data: {
               value: schema,
               metadata: {
+                title: objectifiedSchema.slug,
                 createAt: new Date().toISOString(),
               },
             },
           });
-
-          const objectifiedSchema = JSON.parse(schema);
-          const convertedSlug = objectifiedSchema.slug.splite(" ").join("-");
-          const slug = `${convertedSlug}-${viewId}`;
 
           window.open(`/preview/${slug}`, "_blank");
         } catch (error) {
