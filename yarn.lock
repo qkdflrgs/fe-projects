@@ -2028,6 +2028,7 @@ __metadata:
   dependencies:
     "@litae/react-components-accordion": "workspace:^"
     "@litae/react-components-button": "workspace:^"
+    "@litae/react-components-input": "workspace:^"
     "@litae/react-components-layout": "workspace:^"
     "@litae/react-components-toast": "workspace:^"
     "@litae/themes": "workspace:^"
