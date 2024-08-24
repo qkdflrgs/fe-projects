@@ -14,7 +14,7 @@ import { DesktopFirstSideNav } from "@/src/components/Common/Layouts/DesktopFirs
 import { JsonPresetList } from "@/src/components/Features/EditorNewPage/JsonPresetList";
 import { putViewDetail } from "@/src/apis/worker/putViewDetail";
 
-const EditorNewPage = () => {
+const EditorNewJsonPage = () => {
   const { randomUUID } = new ShortUniqueId({ length: 10 });
   const [viewId] = useState(randomUUID());
   const { toast } = useToast();
@@ -120,4 +120,4 @@ const EditorNewPage = () => {
   );
 };
 
-export default EditorNewPage;
+export default EditorNewJsonPage;
