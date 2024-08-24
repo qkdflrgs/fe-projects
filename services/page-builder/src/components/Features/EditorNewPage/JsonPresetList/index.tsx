@@ -1,7 +1,7 @@
 import { ValidateViewSchemaProps } from "@/src/hooks/useViewSchemaValidation";
 import { ViewSliceSchemaSnippet } from "@/src/utils/jsonEditor/ViewSchemaSnippet";
 import { Button } from "@litae/react-components-button";
-import { formatObjectToJson } from "../../Editor";
+import { formatObjectToJson } from "../../../Common/Editor";
 import { useToast } from "@litae/react-components-toast";
 import { Divider } from "@litae/react-components-layout";
 import { Fragment } from "react";
