@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "@litae/react-components-accordion": "workspace:^",
     "@litae/react-components-button": "workspace:^",
     "@litae/react-components-input": "workspace:^",
