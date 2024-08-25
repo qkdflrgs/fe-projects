@@ -1,14 +1,14 @@
 import { Button } from "@litae/react-components-button";
-import { DesktopFirstLayout } from "@/src/components/layout/DesktopFirstLayout";
-import { DesktopFirstBody } from "@/src/components/layout/DesktopFirstLayout/Body";
-import { DesktopFirstNav } from "@/src/components/layout/DesktopFirstLayout/Nav";
+import { DesktopFirstLayout } from "@/src/components/Common/Layouts/DesktopFirstLayout";
+import { DesktopFirstBody } from "@/src/components/Common/Layouts/DesktopFirstLayout/Body";
+import { DesktopFirstNav } from "@/src/components/Common/Layouts/DesktopFirstLayout/Nav";
 import Link from "next/link";
 import {
   getViewList,
   ViewListResponseData,
 } from "@/src/apis/worker/getViewList";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import { ViewList } from "@/src/components/EditorPage/ViewList";
+import { ViewList } from "@/src/components/Features/EditorPage/ViewList";
 
 const EditorPage = ({
   keys,

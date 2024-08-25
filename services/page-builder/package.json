@@ -10,8 +10,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "@litae/react-components-accordion": "workspace:^",
     "@litae/react-components-button": "workspace:^",
+    "@litae/react-components-input": "workspace:^",
     "@litae/react-components-layout": "workspace:^",
     "@litae/react-components-toast": "workspace:^",
     "@litae/themes": "workspace:^",
@@ -21,6 +23,7 @@
     "next": "14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.0",
     "short-unique-id": "^5.2.0",
     "swiper": "^11.1.9",
     "zod": "^3.23.8"

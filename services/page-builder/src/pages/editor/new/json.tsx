@@ -1,20 +1,20 @@
 import { Button } from "@litae/react-components-button";
-import { DesktopFirstLayout } from "@/src/components/layout/DesktopFirstLayout";
-import { DesktopFirstBody } from "@/src/components/layout/DesktopFirstLayout/Body";
-import { DesktopFirstNav } from "@/src/components/layout/DesktopFirstLayout/Nav";
-import { JsonEditor } from "@/src/components/Editor/Json";
+import { DesktopFirstLayout } from "@/src/components/Common/Layouts/DesktopFirstLayout";
+import { DesktopFirstBody } from "@/src/components/Common/Layouts/DesktopFirstLayout/Body";
+import { DesktopFirstNav } from "@/src/components/Common/Layouts/DesktopFirstLayout/Nav";
+import { JsonEditor } from "@/src/components/Common/Editor/Json";
 import { useState } from "react";
 import { ViewSliceSchemaSnippet } from "@/src/utils/jsonEditor/ViewSchemaSnippet";
-import { formatObjectToJson } from "@/src/components/Editor";
+import { formatObjectToJson } from "@/src/components/Common/Editor";
 import ShortUniqueId from "short-unique-id";
 import { previewStorage } from "@/src/utils/storage";
 import { useViewSchemaValidation } from "@/src/hooks/useViewSchemaValidation";
 import { useToast } from "@litae/react-components-toast";
-import { DesktopFirstSideNav } from "@/src/components/layout/DesktopFirstLayout/SideNav";
-import { JsonPresetList } from "@/src/components/EditorNewPage/JsonPresetList";
+import { DesktopFirstSideNav } from "@/src/components/Common/Layouts/DesktopFirstLayout/SideNav";
+import { JsonPresetList } from "@/src/components/Features/EditorNewPage/JsonPresetList";
 import { putViewDetail } from "@/src/apis/worker/putViewDetail";
 
-const EditorNewPage = () => {
+const EditorNewJsonPage = () => {
   const { randomUUID } = new ShortUniqueId({ length: 10 });
   const [viewId] = useState(randomUUID());
   const { toast } = useToast();
@@ -51,7 +51,7 @@ const EditorNewPage = () => {
       viewSchema: schema,
       onSuccess: async () => {
         const objectifiedSchema = JSON.parse(schema);
-        const convertedSlug = objectifiedSchema.slug.splite(" ").join("-");
+        const convertedSlug = objectifiedSchema.slug.split(" ").join("-");
         const slug = `${convertedSlug}-${viewId}`;
 
         try {
@@ -120,4 +120,4 @@ const EditorNewPage = () => {
   );
 };
 
-export default EditorNewPage;
+export default EditorNewJsonPage;
