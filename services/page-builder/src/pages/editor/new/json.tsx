@@ -13,6 +13,7 @@ import { useToast } from "@litae/react-components-toast";
 import { DesktopFirstSideNav } from "@/src/components/Common/Layouts/DesktopFirstLayout/SideNav";
 import { JsonPresetList } from "@/src/components/Features/EditorNewJsonPage/JsonPresetList";
 import { putViewDetail } from "@/src/apis/worker/putViewDetail";
+import { Box } from "@litae/react-components-layout";
 
 const EditorNewJsonPage = () => {
   const { randomUUID } = new ShortUniqueId({ length: 10 });
@@ -110,11 +111,13 @@ const EditorNewJsonPage = () => {
             validateViewSchema={validateViewSchema}
           />
         </DesktopFirstSideNav>
-        <JsonEditor
-          value={schema}
-          onChange={(value) => setSchema(value || "")}
-          onValidate={handleEditorValidation}
-        />
+        <Box className="w-full min-h-screen relative top-0 ml-[280px]">
+          <JsonEditor
+            value={schema}
+            onChange={(value) => setSchema(value || "")}
+            onValidate={handleEditorValidation}
+          />
+        </Box>
       </DesktopFirstBody>
     </DesktopFirstLayout>
   );
