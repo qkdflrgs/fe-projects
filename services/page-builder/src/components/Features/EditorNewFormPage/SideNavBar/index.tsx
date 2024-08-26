@@ -22,6 +22,17 @@ export const EditorNewFormSideNavBar = () => {
         });
       },
     },
+    {
+      name: "TextSlice",
+      onClick: () => {
+        append({
+          sliceName: "TextSlice",
+          data: {
+            text: "",
+          },
+        });
+      },
+    },
   ];
 
   return (
