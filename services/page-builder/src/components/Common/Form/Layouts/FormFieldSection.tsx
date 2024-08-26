@@ -8,7 +8,7 @@ import { useState } from "react";
 import ShortUniqueId from "short-unique-id";
 
 type Props = {
-  title: string;
+  title: React.ReactNode;
   children: React.ReactNode;
 };
 

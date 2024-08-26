@@ -1,5 +1,44 @@
 import { DesktopFirstSideNav } from "@/src/components/Common/Layouts/DesktopFirstLayout/SideNav";
+import { useViewSchemaFormSliceFieldArray } from "@/src/hooks/useViewSchemaFormSliceFieldArray";
+import { Button } from "@litae/react-components-button";
+import { Divider } from "@litae/react-components-layout";
+import { Fragment } from "react";
+
+type Preset = {
+  name: string;
+  onClick: () => void;
+};
 
 export const EditorNewFormSideNavBar = () => {
-  return <DesktopFirstSideNav>사이드 네비게이션 바</DesktopFirstSideNav>;
+  const { append } = useViewSchemaFormSliceFieldArray();
+
+  const presets: Preset[] = [
+    {
+      name: "SpacingSlice",
+      onClick: () => {
+        append({
+          sliceName: "SpacingSlice",
+          data: {},
+        });
+      },
+    },
+  ];
+
+  return (
+    <DesktopFirstSideNav>
+      {presets.map(({ name, onClick }) => (
+        <Fragment key={name}>
+          <Button
+            className="w-full"
+            style={{ borderRadius: 0 }}
+            variant="ghost"
+            onClick={onClick}
+          >
+            {name}
+          </Button>
+          <Divider />
+        </Fragment>
+      ))}
+    </DesktopFirstSideNav>
+  );
 };
