@@ -34,7 +34,7 @@ const EditorNewFormPage = () => {
                 className="max-w-[600px] w-full"
                 boxShadow="base"
                 style={{
-                  backgroundColor: vars.colors.$static.light.color.white,
+                  background: vars.colors.$static.light.color.white,
                 }}
               >
                 <EditorNewViewSchemaForm />
