@@ -4,12 +4,12 @@ import {
   AccordionItem,
   AccordionPanel,
 } from "@litae/react-components-accordion";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import ShortUniqueId from "short-unique-id";
 
 type Props = {
-  title: React.ReactNode;
-  children: React.ReactNode;
+  title: ReactNode;
+  children: ReactNode;
 };
 
 export const FormFieldSection = ({ title, children }: Props) => {
@@ -18,9 +18,9 @@ export const FormFieldSection = ({ title, children }: Props) => {
   const itemName = `${title}-${uniqueId}`;
 
   return (
-    <Accordion defaultActiveItems={[itemName]}>
+    <Accordion className="w-full" defaultActiveItems={[itemName]}>
       <AccordionItem itemName={itemName}>
-        <AccordionButton>{title}</AccordionButton>
+        <AccordionButton className="min-h-[48px]">{title}</AccordionButton>
         <AccordionPanel>{children}</AccordionPanel>
       </AccordionItem>
     </Accordion>
