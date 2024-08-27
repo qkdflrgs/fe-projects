@@ -4,6 +4,7 @@ import { Heading } from "@litae/react-components-layout";
 import { vars } from "@litae/themes";
 import { ViewSchemaFormSliceSpacingFields } from "./SpacingFields";
 import { ViewSchemaFormSliceTextFields } from "./TextFields";
+import { ViewSchemaFormSliceImageFields } from "./ImageFields";
 
 export const ViewSchemaFormSliceFields = () => {
   const { fields } = useViewSchemaFormSliceFieldArray();
@@ -24,6 +25,9 @@ export const ViewSchemaFormSliceFields = () => {
           }
           case "TextSlice": {
             return <ViewSchemaFormSliceTextFields fieldIndex={index} />;
+          }
+          case "ImageSlice": {
+            return <ViewSchemaFormSliceImageFields fieldIndex={index} />;
           }
           default:
             <></>;
