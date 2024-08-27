@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.637.0",
+    "@aws-sdk/s3-request-presigner": "^3.637.0",
     "@hookform/resolvers": "^3.9.0",
     "@litae/react-components-accordion": "workspace:^",
     "@litae/react-components-button": "workspace:^",
