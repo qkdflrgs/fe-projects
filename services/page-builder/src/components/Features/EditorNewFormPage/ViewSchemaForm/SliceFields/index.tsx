@@ -5,6 +5,7 @@ import { vars } from "@litae/themes";
 import { ViewSchemaFormSliceSpacingFields } from "./SpacingFields";
 import { ViewSchemaFormSliceTextFields } from "./TextFields";
 import { ViewSchemaFormSliceImageFields } from "./ImageFields";
+import { ViewSchemaFormSliceImageSliderFields } from "./ImageSliderFields";
 
 export const ViewSchemaFormSliceFields = () => {
   const { fields } = useViewSchemaFormSliceFieldArray();
@@ -28,6 +29,9 @@ export const ViewSchemaFormSliceFields = () => {
           }
           case "ImageSlice": {
             return <ViewSchemaFormSliceImageFields fieldIndex={index} />;
+          }
+          case "ImageSliderSlice": {
+            return <ViewSchemaFormSliceImageSliderFields fieldIndex={index} />;
           }
           default:
             <></>;
