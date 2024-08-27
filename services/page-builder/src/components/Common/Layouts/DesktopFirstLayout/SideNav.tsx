@@ -5,7 +5,7 @@ type Props = BoxProps;
 export const DesktopFirstSideNav = (props: Props) => {
   const { className, background = "gray", children, ...rest } = props;
 
-  const currentClassName = ["w-[280px] z-10 fixed, min-h-full", className].join(
+  const currentClassName = ["w-[280px] z-10 fixed min-h-full", className].join(
     " ",
   );
 

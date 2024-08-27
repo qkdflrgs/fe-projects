@@ -2,7 +2,8 @@ import { Spacing } from "@/src/components/Common/Spacing";
 import { useViewSchemaFormSliceFieldArray } from "@/src/hooks/useViewSchemaFormSliceFieldArray";
 import { Heading } from "@litae/react-components-layout";
 import { vars } from "@litae/themes";
-import { ViewSchemaFormSliceSpacingField } from "./SpacingFields";
+import { ViewSchemaFormSliceSpacingFields } from "./SpacingFields";
+import { ViewSchemaFormSliceTextFields } from "./TextFields";
 
 export const ViewSchemaFormSliceFields = () => {
   const { fields } = useViewSchemaFormSliceFieldArray();
@@ -19,7 +20,10 @@ export const ViewSchemaFormSliceFields = () => {
       {fields.map((field, index) => {
         switch (field.sliceName) {
           case "SpacingSlice": {
-            return <ViewSchemaFormSliceSpacingField fieldIndex={index} />;
+            return <ViewSchemaFormSliceSpacingFields fieldIndex={index} />;
+          }
+          case "TextSlice": {
+            return <ViewSchemaFormSliceTextFields fieldIndex={index} />;
           }
           default:
             <></>;

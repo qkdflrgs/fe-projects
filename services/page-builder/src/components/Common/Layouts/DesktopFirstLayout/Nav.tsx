@@ -25,7 +25,7 @@ export const DesktopFirstNav = (props: Props) => {
       justify={justify}
       className={currentClassName}
       style={{
-        backgroundColor: vars.colors.$static.light.color.white,
+        background: vars.colors.$static.light.color.white,
       }}
     >
       {children}

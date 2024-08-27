@@ -15,6 +15,7 @@
     "@litae/react-components-button": "workspace:^",
     "@litae/react-components-input": "workspace:^",
     "@litae/react-components-layout": "workspace:^",
+    "@litae/react-components-select": "workspace:^",
     "@litae/react-components-toast": "workspace:^",
     "@litae/themes": "workspace:^",
     "@monaco-editor/react": "^4.6.0",

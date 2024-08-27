@@ -10,7 +10,7 @@ type Props = {
   fieldIndex: number;
 };
 
-export const ViewSchemaFormSliceSpacingField = ({ fieldIndex }: Props) => {
+export const ViewSchemaFormSliceSpacingFields = ({ fieldIndex }: Props) => {
   const { register, setValue } = useViewSchemaFormContext();
   const { remove } = useViewSchemaFormSliceFieldArray();
 
@@ -51,7 +51,7 @@ export const ViewSchemaFormSliceSpacingField = ({ fieldIndex }: Props) => {
         label="backgroundColor"
         type="color"
         defaultValue={vars.colors.$static.light.gray[300]}
-        {...register(`slices.${fieldIndex}.data.sliceStyle.height`)}
+        {...register(`slices.${fieldIndex}.data.sliceStyle.backgroundColor`)}
       />
     </FormFieldSection>
   );
