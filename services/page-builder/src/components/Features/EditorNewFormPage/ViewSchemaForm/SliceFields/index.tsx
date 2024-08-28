@@ -1,15 +1,76 @@
 import { Spacing } from "@/src/components/Common/Spacing";
 import { useViewSchemaFormSliceFieldArray } from "@/src/hooks/useViewSchemaFormSliceFieldArray";
-import { Heading } from "@litae/react-components-layout";
+import { Box, Flex, Heading } from "@litae/react-components-layout";
 import { vars } from "@litae/themes";
 import { ViewSchemaFormSliceSpacingFields } from "./SpacingFields";
 import { ViewSchemaFormSliceTextFields } from "./TextFields";
 import { ViewSchemaFormSliceImageFields } from "./ImageFields";
 import { ViewSchemaFormSliceImageSliderFields } from "./ImageSliderFields";
 import { ViewSchemaFormSliceAccordionFields } from "./AccordionFields";
+import { Button } from "@litae/react-components-button";
 
 export const ViewSchemaFormSliceFields = () => {
-  const { fields } = useViewSchemaFormSliceFieldArray();
+  const { fields, swap } = useViewSchemaFormSliceFieldArray();
+
+  // @ts-ignore
+  const renderSliceFields = (field, index) => {
+    let component;
+
+    switch (field.sliceName) {
+      case "SpacingSlice": {
+        component = <ViewSchemaFormSliceSpacingFields fieldIndex={index} />;
+        break;
+      }
+      case "TextSlice": {
+        component = <ViewSchemaFormSliceTextFields fieldIndex={index} />;
+        break;
+      }
+      case "ImageSlice": {
+        component = <ViewSchemaFormSliceImageFields fieldIndex={index} />;
+        break;
+      }
+      case "ImageSliderSlice": {
+        component = <ViewSchemaFormSliceImageSliderFields fieldIndex={index} />;
+        break;
+      }
+      case "AccordionSlice": {
+        component = <ViewSchemaFormSliceAccordionFields fieldIndex={index} />;
+        break;
+      }
+      default:
+    }
+
+    const handleSwapUp = () => {
+      swap(index, index - 1);
+    };
+    const handleSwapDown = () => {
+      swap(index, index + 1);
+    };
+
+    return (
+      <Flex gap={4}>
+        <Box>
+          <Button
+            isDisabled={index <= 0}
+            variant="ghost"
+            size="xs"
+            onClick={handleSwapUp}
+          >
+            ⬆️
+          </Button>
+          <Button
+            isDisabled={index >= fields.length - 1}
+            variant="ghost"
+            size="xs"
+            onClick={handleSwapDown}
+          >
+            ⬇️
+          </Button>
+        </Box>
+        {component}
+      </Flex>
+    );
+  };
 
   return (
     <>
@@ -20,27 +81,7 @@ export const ViewSchemaFormSliceFields = () => {
         Slices
       </Heading>
       <Spacing />
-      {fields.map((field, index) => {
-        switch (field.sliceName) {
-          case "SpacingSlice": {
-            return <ViewSchemaFormSliceSpacingFields fieldIndex={index} />;
-          }
-          case "TextSlice": {
-            return <ViewSchemaFormSliceTextFields fieldIndex={index} />;
-          }
-          case "ImageSlice": {
-            return <ViewSchemaFormSliceImageFields fieldIndex={index} />;
-          }
-          case "ImageSliderSlice": {
-            return <ViewSchemaFormSliceImageSliderFields fieldIndex={index} />;
-          }
-          case "AccordionSlice": {
-            return <ViewSchemaFormSliceAccordionFields fieldIndex={index} />;
-          }
-          default:
-            <></>;
-        }
-      })}
+      {fields.map(renderSliceFields)}
     </>
   );
 };
