@@ -40,6 +40,8 @@ export const EditorNewFormGlobalNavBar = ({ viewId }: Props) => {
 
   const handlePublish = handleSubmit(
     async (formData) => {
+      previewStorage.set(viewId, formatObjectToJson(formData));
+
       const convertedSlug = formData.slug.split(" ").join("-");
       const currentFormData = {
         ...formData,
@@ -53,6 +55,8 @@ export const EditorNewFormGlobalNavBar = ({ viewId }: Props) => {
             value: formatObjectToJson(currentFormData),
             metadata: {
               title: formData.slug,
+              isDraft: false,
+              updatedAt: new Date().toISOString(),
               createAt: new Date().toISOString(),
             },
           },

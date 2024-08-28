@@ -51,6 +51,8 @@ const EditorNewJsonPage = () => {
     validateViewSchema({
       viewSchema: schema,
       onSuccess: async () => {
+        previewStorage.set(viewId, schema);
+
         const objectifiedSchema = JSON.parse(schema);
         const convertedSlug = objectifiedSchema.slug.split(" ").join("-");
         const slug = `${convertedSlug}-${viewId}`;
@@ -62,6 +64,8 @@ const EditorNewJsonPage = () => {
               value: schema,
               metadata: {
                 title: objectifiedSchema.slug,
+                isDraft: false,
+                updatedAt: new Date().toISOString(),
                 createAt: new Date().toISOString(),
               },
             },
