@@ -2,12 +2,11 @@ import { InputField } from "@/src/components/Common/Form/Field/InputField";
 import { SelectField } from "@/src/components/Common/Form/Field/SelectField";
 import { FormFieldSection } from "@/src/components/Common/Form/Layouts/FormFieldSection";
 import { useViewSchemaFormContext } from "@/src/hooks/useViewSchemaForm";
-import { useViewSchemaFormSliceFieldArray } from "@/src/hooks/useViewSchemaFormSliceFieldArray";
-import { Button } from "@litae/react-components-button";
 import { Divider } from "@litae/react-components-layout";
 import { vars } from "@litae/themes";
 import { useEffect } from "react";
 import { ImagesFields } from "./ImagesFields";
+import { SliceFieldTitleNavBar } from "../Common/SliceFieldTitleNavBar";
 
 type Props = {
   fieldIndex: number;
@@ -15,32 +14,18 @@ type Props = {
 
 export const ViewSchemaFormSliceImageSliderFields = ({ fieldIndex }: Props) => {
   const { register, setValue } = useViewSchemaFormContext();
-  const { remove } = useViewSchemaFormSliceFieldArray();
 
   useEffect(() => {
     setValue(`slices.${fieldIndex}.sliceName`, "ImageSliderSlice");
   }, []);
 
-  const handleRemove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
-
-    remove(fieldIndex);
-  };
-
   return (
     <FormFieldSection
       title={
-        <>
-          {fieldIndex}. ImageSliderSlice{""}
-          <Button
-            size="xs"
-            variant="outline"
-            color="red"
-            onClick={handleRemove}
-          >
-            삭제
-          </Button>
-        </>
+        <SliceFieldTitleNavBar
+          title={`${fieldIndex}. Spacing`}
+          fieldIndex={fieldIndex}
+        />
       }
     >
       <Divider />
