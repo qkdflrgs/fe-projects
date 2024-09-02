@@ -3201,8 +3201,8 @@ __metadata:
   resolution: "@litae/youtube@workspace:services/youtube"
   dependencies:
     "@litae/themes": "workspace:^"
-    "@tanstack/react-query": "npm:^5.53.2"
-    "@tanstack/react-query-next-experimental": "npm:^5.53.2"
+    "@tanstack/react-query": "npm:^5.8.4"
+    "@tanstack/react-query-next-experimental": "npm:^5.8.4"
     "@types/node": "npm:^22.2.0"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
@@ -4925,7 +4925,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-query-next-experimental@npm:^5.53.2":
+"@tanstack/react-query-next-experimental@npm:^5.8.4":
   version: 5.53.2
   resolution: "@tanstack/react-query-next-experimental@npm:5.53.2"
   peerDependencies:
@@ -4936,7 +4936,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.53.2":
+"@tanstack/react-query@npm:^5.8.4":
   version: 5.53.2
   resolution: "@tanstack/react-query@npm:5.53.2"
   dependencies:
