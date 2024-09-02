@@ -15,8 +15,6 @@ export const PopularVideosList = async () => {
     }, 2000);
   }, []);
 
-  console.log(data);
-
   return (
     <section style={{ color: vars.colors.$scale.gray[900] }}>
       <h2>목록</h2>
