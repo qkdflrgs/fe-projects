@@ -68,7 +68,7 @@ const mappingResponse = (
   return {
     lists,
     prevPageToken: data.prevPageToken ?? undefined,
-    nextPageToken: data.prevPageToken ?? undefined,
+    nextPageToken: data.nextPageToken ?? undefined,
     totalResults: data.pageInfo?.totalResults ?? 0,
   };
 };
