@@ -54,6 +54,8 @@ const mappingResponse = (
         channelTitle: snippet?.channelTitle ?? "",
         thumbnail: {
           url: snippet?.thumbnails?.medium?.url ?? "",
+          width: snippet?.thumbnails?.medium?.width ?? undefined,
+          height: snippet?.thumbnails?.medium?.height ?? undefined,
         },
         publishedAt,
         publishedAtDisplayText:
@@ -66,7 +68,7 @@ const mappingResponse = (
   return {
     lists,
     prevPageToken: data.prevPageToken ?? undefined,
-    nextPageToken: data.prevPageToken ?? undefined,
+    nextPageToken: data.nextPageToken ?? undefined,
     totalResults: data.pageInfo?.totalResults ?? 0,
   };
 };

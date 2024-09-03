@@ -1,12 +1,11 @@
 import { Suspense } from "react";
-import * as s from "../(youtube)/page.css";
 import { PopularVideosList } from "@/src/features/main/components/PopularVideosList";
+import { PopularVideosListSkeleton } from "@/src/features/main/components/PopularVideosList/Skeleton";
 
 export default function Home() {
   return (
-    <main className={s.main}>
-      <h1 style={{ padding: "12px" }}>타이틀</h1>
-      <Suspense fallback={<div>🥲</div>}>
+    <main>
+      <Suspense fallback={<PopularVideosListSkeleton />}>
         <PopularVideosList />
       </Suspense>
     </main>
