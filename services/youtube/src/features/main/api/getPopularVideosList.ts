@@ -26,14 +26,14 @@ export type GetPopularVideosListResponse = {
   lists: PopularListItem[];
 } & ListPageApiInfo;
 
-export const getPopularVideosListPath = "/api/videos/popular-list";
+export const getPopularVideosListUrl = `${API_BASE_URL}/api/videos/popular-list`;
 
 export const getPopularVideosList = async (
   params: GetPopularVideosListRequestParams,
 ): Promise<GetPopularVideosListResponse> => {
   const queryParams = queryString.stringify(params);
 
-  const url = `${API_BASE_URL}${getPopularVideosListPath}?${queryParams}`;
+  const url = `${getPopularVideosListUrl}?${queryParams}`;
 
   const response = await fetch(url);
 
