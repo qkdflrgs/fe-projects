@@ -1,4 +1,5 @@
 "use client";
+import { flattenInfinityListData } from "@/src/shared/utils/data";
 import { PopularVideosListItem } from "./ListItem";
 import * as s from "./style.css";
 import { useGetPopularVideosList } from "@/src/features/main/hooks/useGetPopularVideosList";
@@ -8,7 +9,7 @@ export const PopularVideosList = () => {
   const { data, hasNextPage, fetchNextPage, isFetchingNextPage } =
     useGetPopularVideosList({});
 
-  const flatData = data.pages.map((page) => page?.lists ?? []).flat();
+  const flatData = flattenInfinityListData(data);
 
   return (
     <>
