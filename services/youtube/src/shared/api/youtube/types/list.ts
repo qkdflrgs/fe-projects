@@ -1,4 +1,4 @@
-import { VideoThumbnail } from "./item";
+import { Thumbnail } from "./item";
 
 export type ListPageApiInfo = {
   nextPageToken?: string;
@@ -12,9 +12,21 @@ export type VideoListItem = {
   description: string;
   channelId: string;
   channelTitle: string;
-  thumbnail: VideoThumbnail;
+  thumbnail: Thumbnail;
   publishedAt: string;
   publishedAtDisplayText: string; // ex) 5시간 전
+};
+
+export type CommentListItem = {
+  commentId: string;
+  textDisplay: string;
+  authorDisplayName: string;
+  authorProfileImageUrl: string;
+  likeCount: number;
+  likeCountDisplayText: string;
+  publishedAt: string;
+  publishedAtDisplayText: string;
+  isUpdated: boolean;
 };
 
 export type ListResponse<T> = {

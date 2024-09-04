@@ -1,4 +1,5 @@
 import { API_BASE_URL } from "@/src/shared/api/constants";
+import { VideoStatistics } from "@/src/shared/api/youtube/types/item";
 import {
   ListResponse,
   VideoListItem,
@@ -11,10 +12,11 @@ export type GetPopularVideosListRequestParams = Pick<
   "maxResults" | "pageToken"
 >;
 
-export type PopularListItem = {
-  viewCount: number;
-  viewCountDisplayText: string; // ex) 2.1만
-} & VideoListItem;
+export type PopularListItem = Pick<
+  VideoStatistics,
+  "viewCount" | "viewCountDisplayText"
+> &
+  VideoListItem;
 
 export type GetPopularVideosListResponse = ListResponse<PopularListItem>;
 
