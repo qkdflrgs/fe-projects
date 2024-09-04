@@ -24,12 +24,14 @@ export const GET_MOCK_VIDEOS_DETAIL = {
       },
       publishedAt: "2024-08-30T11:59:58Z",
       publishedAtDisplayText: "5일 전",
-      viewCount: 2117034,
-      viewCountDisplayText: "211만",
-      likeCount: 37919,
+      viewCount: 2122745,
+      viewCountDisplayText: "212만",
+      likeCount: 37945,
       likeCountDisplayText: "3만",
       dislikeCount: 0,
       dislikeCountDisplayText: "0",
+      commentCount: 3139,
+      commentCountDisplayText: "3,139",
       channelInfo: {
         title: "곽튜브",
         description:
