@@ -31,5 +31,8 @@
     "nx": "^19.5.4",
     "prettier": "^3.0.3",
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "vite": "^5.3.5"
   }
 }
