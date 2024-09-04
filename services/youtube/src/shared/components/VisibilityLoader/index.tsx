@@ -19,7 +19,7 @@ export const VisibilityLoader = ({
   const { ref } = useIntersectionObserver(observerProps);
 
   return (
-    <div ref={ref} className={s.wrapper}>
+    <div data-testId="VisibilityLoader" ref={ref} className={s.wrapper}>
       <div>{children}</div>
     </div>
   );
