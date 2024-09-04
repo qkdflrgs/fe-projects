@@ -7,6 +7,9 @@ import {
   resetIntersectionMocking,
   setupIntersectionMocking,
 } from "react-intersection-observer/test-utils";
+import { MockNextNavigation } from "./src/shared/utils/test/mockNextNavigation";
+
+vi.mock("next/navigation", () => MockNextNavigation);
 
 beforeAll(() => {
   server.listen();
