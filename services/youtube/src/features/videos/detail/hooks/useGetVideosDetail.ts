@@ -6,7 +6,7 @@ import {
   getVideosDetail,
   GetVideosDetailRequestParams,
   GetVideosDetailResponse,
-} from "../api/getVideosDetail";
+} from "../../../../shared/api/youtube/client/videoDetail/getVideosDetail";
 
 type Params = GetVideosDetailRequestParams;
 
