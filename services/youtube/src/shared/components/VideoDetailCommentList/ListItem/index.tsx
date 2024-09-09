@@ -1,5 +1,5 @@
 import * as s from "./style.css";
-import { VideosDetailCommentListItem } from "../../../../../../shared/api/youtube/client/videoDetail/getVideosDetailCommentList";
+import { VideosDetailCommentListItem } from "../../../api/youtube/client/videoDetail/getVideosDetailCommentList";
 
 type Props = {
   comment: VideosDetailCommentListItem;

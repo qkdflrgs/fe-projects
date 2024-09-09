@@ -20,13 +20,16 @@
     "@vanilla-extract/dynamic": "^2.1.1",
     "@vanilla-extract/recipes": "^0.5.3",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.5.4",
     "googleapis": "^143.0.0",
     "graphql": "^16.9.0",
     "next": "14.2.5",
     "query-string": "^9.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-intersection-observer": "^9.13.0"
+    "react-intersection-observer": "^9.13.0",
+    "react-youtube": "^10.1.0",
+    "swiper": "^11.1.12"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

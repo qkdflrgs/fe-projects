@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import * as s from "./style.css";
 import { VideoDetailPageParams } from "@/src/features/videos/detail/types";
 import { VideoDetail } from "@/src/features/videos/detail/components/VideoDetail";
-import { VideoDetailCommentList } from "@/src/features/videos/detail/components/VideoDetailCommentList";
+import { VideoDetailCommentList } from "@/src/shared/components/VideoDetailCommentList";
 
 export default function VideoDetailPage({ params }: VideoDetailPageParams) {
   const { videoId } = params;
